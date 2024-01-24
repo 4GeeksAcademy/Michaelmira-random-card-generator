@@ -27,7 +27,17 @@ window.onload = function() {
   const suiteIndex = Math.floor(Math.random() * suite.length);
   const cardIndex = Math.floor(Math.random() * card.length);
 
-  return console.log([suite[suiteIndex]], [card[cardIndex]]);
+  const suitElement = document.getElementById("suit");
+  suitElement.textContent = suite[suiteIndex];
+
+  const suitTwoElement = document.getElementById("suitTwo");
+  suitTwoElement.textContent = suite[suiteIndex];
+
+  return console.log(
+    [suite[suiteIndex]],
+    [card[cardIndex]],
+    [suite[suiteIndex]]
+  );
 };
 
 // 1. make 2 arrays one with card suites and one identifying cards Complete
@@ -37,3 +47,4 @@ window.onload = function() {
 // 4. write another function to input results into a sample function. return suitA cardB suitA. Complete
 // 5. transfer results to html using id.
 // 6. upload suite icons
+// 7. create button to continue randomizing more cards instead of refreshing page
