@@ -6,9 +6,7 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  function generateCard() {}
-
-  const suite = ["hearts", "spade", "diamond", "clubs"];
+  const suite = ["♥", "♠", "♦", "♣"];
   const card = [
     "2",
     "3",
@@ -19,19 +17,22 @@ window.onload = function() {
     "8",
     "9",
     "10",
-    "jack",
-    "queen",
-    "king",
-    "ace"
+    "J",
+    "Q",
+    "K",
+    "A"
   ];
   const suiteIndex = Math.floor(Math.random() * suite.length);
   const cardIndex = Math.floor(Math.random() * card.length);
 
   const suitElement = document.getElementById("suit");
-  suitElement.textContent = suite[suiteIndex];
-
   const suitTwoElement = document.getElementById("suitTwo");
+
+  suitElement.textContent = suite[suiteIndex];
   suitTwoElement.textContent = suite[suiteIndex];
+
+  const cardRankingElement = document.getElementById("cardRanking");
+  cardRankingElement.textContent = card[cardIndex];
 
   return console.log(
     [suite[suiteIndex]],
@@ -45,6 +46,7 @@ window.onload = function() {
 // 2b. test and return results to console. Complete
 // 3. write a code function using math random to randomly pick a card. 14 options. Complete
 // 4. write another function to input results into a sample function. return suitA cardB suitA. Complete
-// 5. transfer results to html using id.
-// 6. upload suite icons
+// 5. transfer results to html using id. Complete
+// 6. upload suite icons Complete
+// 6b. Make the Heart and Diamond show up as red BEFORE
 // 7. create button to continue randomizing more cards instead of refreshing page
