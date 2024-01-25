@@ -60,6 +60,18 @@ window.onload = function() {
     }
   }
   console.log(allCards);
+
+  const cardIds = ["myCardOne", "myCardTwo", "myCardFour", "myCardFive"];
+  const pokerButton = document.getElementById("pokerButton");
+  pokerButton.addEventListener("click", toggleCard);
+
+  function toggleCard() {
+    for (const cardId of cardIds) {
+      const card = document.getElementById(cardId);
+      card.classList.toggle("bg-success");
+      card.classList.toggle("bg-white");
+    }
+  }
 };
 
 // 1. make 2 arrays one with card suits and one identifying cards Complete
