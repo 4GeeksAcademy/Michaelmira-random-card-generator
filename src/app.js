@@ -126,13 +126,40 @@ window.onload = function() {
     if (suit === "♥" || suit === "♦") {
       cardOneSuitOneElement.style.color = "red";
       cardOneSuitTwoElement.style.color = "red";
+      cardTwoSuitOneElement.style.color = "red";
+      cardTwoSuitTwoElement.style.color = "red";
+      suitsElement.style.color = "red";
+      suitsTwoElement.style.color = "red";
+      cardFourSuitOneElement.style.color = "red";
+      cardFourSuitTwoElement.style.color = "red";
+      cardFiveSuitOneElement.style.color = "red";
+      cardFiveSuitTwoElement.style.color = "red";
     } else {
       cardOneSuitOneElement.style.color = "black";
       cardOneSuitTwoElement.style.color = "black";
+      cardTwoSuitOneElement.style.color = "black";
+      cardTwoSuitTwoElement.style.color = "black";
+      suitsElement.style.color = "black";
+      suitsTwoElement.style.color = "black";
+      cardFourSuitOneElement.style.color = "black";
+      cardFourSuitTwoElement.style.color = "black";
+      cardFiveSuitOneElement.style.color = "black";
+      cardFiveSuitTwoElement.style.color = "black";
     }
 
     generateButton.style.display = "none";
-    return console.log([allCards[allCardsIndex]]);
+
+    console.log("this is it");
+
+    return console.log([
+      [suit, ranking],
+      [suitResult2, rankingResult2],
+      [suitResult3, rankingResult3],
+      [suitResult4, rankingResult4],
+      [suitResult5, rankingResult5]
+    ]);
+    // console.log("this is it")
+    // const firstCardResult =
   }
 };
 
@@ -149,6 +176,8 @@ window.onload = function() {
 // 9. Refactor index.html to include 5 cards with 3rd card only visible until poker button pressed. Completed
 // 10. Using card generator make arry with exact amount of cards in a deck. Completed
 // 11. make a new function to pull a random card out of the new deck array. and place it to cardOne. Completed
-// 11.B Create 5 Random cards at the same time.
-// 12. erase card from deck. so that it can not be pulled a second time.
+// 11.B Create 5 Random cards at the same time. Completed
+// 12. get the chosen 5 cards and put them into an array Completed
+// 12. erase the 5 cards from deck. so that it can not be pulled a second time.
 // 13. make Draw buttons under each card.
+// 14. Cards are all turning red or black no just one need fix
