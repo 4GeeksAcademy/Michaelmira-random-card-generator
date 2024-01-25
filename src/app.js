@@ -69,8 +69,8 @@ window.onload = function() {
   function toggleCard() {
     for (const cardId of cardIds) {
       const card = document.getElementById(cardId);
-      card.classList.toggle("bg-success");
-      card.classList.toggle("bg-white");
+      card.classList.remove("bg-success");
+      card.classList.add("bg-white");
     }
   }
 
@@ -78,6 +78,8 @@ window.onload = function() {
     const allCardsIndex = Math.floor(Math.random() * allCards.length);
     const allCardsIndexTwo = Math.floor(Math.random() * allCards.length);
     const allCardsIndexThree = Math.floor(Math.random() * allCards.length);
+    const allCardsIndexFour = Math.floor(Math.random() * allCards.length);
+    const allCardsIndexFive = Math.floor(Math.random() * allCards.length);
     const cardOneSuitOneElement = document.getElementById("cardOneSuitOne");
     const cardOneSuitTwoElement = document.getElementById("cardOneSuitTwo");
     const cardOneRankingElement = document.getElementById("cardOneRanking");
@@ -87,13 +89,23 @@ window.onload = function() {
     const cardFourSuitOneElement = document.getElementById("cardFourSuitOne");
     const cardFourSuitTwoElement = document.getElementById("cardFourSuitTwo");
     const cardFourRankingElement = document.getElementById("cardFourRanking");
+    const cardFiveSuitOneElement = document.getElementById("cardFiveSuitOne");
+    const cardFiveSuitTwoElement = document.getElementById("cardFiveSuitTwo");
+    const cardFiveRankingElement = document.getElementById("cardFiveRanking");
+    const suitsElement = document.getElementById("suits");
+    const suitsTwoElement = document.getElementById("suitsTwo");
+    const cardsRankingElement = document.getElementById("cardsRanking");
 
     const suit = allCards[allCardsIndex][0];
     const suitResult2 = allCards[allCardsIndexTwo][0];
     const suitResult3 = allCards[allCardsIndexThree][0];
+    const suitResult4 = allCards[allCardsIndexFour][0];
+    const suitResult5 = allCards[allCardsIndexFive][0];
     const ranking = allCards[allCardsIndex][1];
     const rankingResult2 = allCards[allCardsIndexTwo][1];
     const rankingResult3 = allCards[allCardsIndexThree][1];
+    const rankingResult4 = allCards[allCardsIndexFour][1];
+    const rankingResult5 = allCards[allCardsIndexFive][1];
 
     cardOneSuitOneElement.textContent = suit;
     cardOneSuitTwoElement.textContent = suit;
@@ -104,6 +116,12 @@ window.onload = function() {
     cardFourSuitOneElement.textContent = suitResult3;
     cardFourSuitTwoElement.textContent = suitResult3;
     cardFourRankingElement.textContent = rankingResult3;
+    cardFiveSuitOneElement.textContent = suitResult4;
+    cardFiveSuitTwoElement.textContent = suitResult4;
+    cardFiveRankingElement.textContent = rankingResult4;
+    suitsElement.textContent = suitResult5;
+    suitsTwoElement.textContent = suitResult5;
+    cardsRankingElement.textContent = rankingResult5;
 
     if (suit === "♥" || suit === "♦") {
       cardOneSuitOneElement.style.color = "red";
@@ -113,6 +131,7 @@ window.onload = function() {
       cardOneSuitTwoElement.style.color = "black";
     }
 
+    generateButton.style.display = "none";
     return console.log([allCards[allCardsIndex]]);
   }
 };
@@ -129,6 +148,7 @@ window.onload = function() {
 // 8. Lets make another button that says Draw Poker Completed
 // 9. Refactor index.html to include 5 cards with 3rd card only visible until poker button pressed. Completed
 // 10. Using card generator make arry with exact amount of cards in a deck. Completed
-// 11. make a new function to pull a random card out of the new deck array. and place it to cardOne.
+// 11. make a new function to pull a random card out of the new deck array. and place it to cardOne. Completed
+// 11.B Create 5 Random cards at the same time.
 // 12. erase card from deck. so that it can not be pulled a second time.
 // 13. make Draw buttons under each card.
