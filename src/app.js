@@ -72,6 +72,12 @@ window.onload = function() {
       card.classList.toggle("bg-white");
     }
   }
+
+  function generatePokerHand() {
+    const allCardsIndex = Math.floor(Math.random() * allCards.length);
+    return console.log([allCards[allCardsIndex]]);
+  }
+  generatePokerHand();
 };
 
 // 1. make 2 arrays one with card suits and one identifying cards Complete
@@ -83,6 +89,9 @@ window.onload = function() {
 // 6. upload suite icons Complete
 // 6b. Make the Heart and Diamond show up as red BEFORE printing Complete
 // 7. create button to continue randomizing more cards instead of refreshing page Completed
-// 8. Lets make another button that says Draw Poker
-// 9. Make hidden Div with 5 cards.
-// 10. using JS Gene
+// 8. Lets make another button that says Draw Poker Completed
+// 9. Refactor index.html to include 5 cards with 3rd card only visible until poker button pressed. Completed
+// 10. Using card generator make arry with exact amount of cards in a deck. Completed
+// 11. make a new function to pull a random card out of the new deck array. and place it to cardOne.
+// 12. erase card from deck. so that it can not be pulled a second time.
+// 13. make Draw buttons under each card.
