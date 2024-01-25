@@ -64,6 +64,7 @@ window.onload = function() {
   const cardIds = ["myCardOne", "myCardTwo", "myCardFour", "myCardFive"];
   const pokerButton = document.getElementById("pokerButton");
   pokerButton.addEventListener("click", toggleCard);
+  pokerButton.addEventListener("click", generatePokerHand);
 
   function toggleCard() {
     for (const cardId of cardIds) {
@@ -75,9 +76,45 @@ window.onload = function() {
 
   function generatePokerHand() {
     const allCardsIndex = Math.floor(Math.random() * allCards.length);
+    const allCardsIndexTwo = Math.floor(Math.random() * allCards.length);
+    const allCardsIndexThree = Math.floor(Math.random() * allCards.length);
+    const cardOneSuitOneElement = document.getElementById("cardOneSuitOne");
+    const cardOneSuitTwoElement = document.getElementById("cardOneSuitTwo");
+    const cardOneRankingElement = document.getElementById("cardOneRanking");
+    const cardTwoSuitOneElement = document.getElementById("cardTwoSuitOne");
+    const cardTwoSuitTwoElement = document.getElementById("cardTwoSuitTwo");
+    const cardTwoRankingElement = document.getElementById("cardTwoRanking");
+    const cardFourSuitOneElement = document.getElementById("cardFourSuitOne");
+    const cardFourSuitTwoElement = document.getElementById("cardFourSuitTwo");
+    const cardFourRankingElement = document.getElementById("cardFourRanking");
+
+    const suit = allCards[allCardsIndex][0];
+    const suitResult2 = allCards[allCardsIndexTwo][0];
+    const suitResult3 = allCards[allCardsIndexThree][0];
+    const ranking = allCards[allCardsIndex][1];
+    const rankingResult2 = allCards[allCardsIndexTwo][1];
+    const rankingResult3 = allCards[allCardsIndexThree][1];
+
+    cardOneSuitOneElement.textContent = suit;
+    cardOneSuitTwoElement.textContent = suit;
+    cardOneRankingElement.textContent = ranking;
+    cardTwoSuitOneElement.textContent = suitResult2;
+    cardTwoSuitTwoElement.textContent = suitResult2;
+    cardTwoRankingElement.textContent = rankingResult2;
+    cardFourSuitOneElement.textContent = suitResult3;
+    cardFourSuitTwoElement.textContent = suitResult3;
+    cardFourRankingElement.textContent = rankingResult3;
+
+    if (suit === "♥" || suit === "♦") {
+      cardOneSuitOneElement.style.color = "red";
+      cardOneSuitTwoElement.style.color = "red";
+    } else {
+      cardOneSuitOneElement.style.color = "black";
+      cardOneSuitTwoElement.style.color = "black";
+    }
+
     return console.log([allCards[allCardsIndex]]);
   }
-  generatePokerHand();
 };
 
 // 1. make 2 arrays one with card suits and one identifying cards Complete
