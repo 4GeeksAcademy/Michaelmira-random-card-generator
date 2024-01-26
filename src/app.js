@@ -64,7 +64,7 @@ window.onload = function() {
   const cardIds = ["myCardOne", "myCardTwo", "myCardFour", "myCardFive"];
   const pokerButton = document.getElementById("pokerButton");
   pokerButton.addEventListener("click", toggleCard);
-  // pokerButton.addEventListener("click", generatePokerHand);
+  pokerButton.addEventListener("click", generatePokerHand);
   pokerButton.addEventListener("click", turnDrawOn);
 
   function toggleCard() {
@@ -106,29 +106,124 @@ window.onload = function() {
   function drawFive() {
     const resultArray = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       const drawnArray = drawCard();
-      console.log(drawnArray);
+      console.log(resultArray + "resultArray");
+      console.log(drawnArray + "drawnArray");
       resultArray.push(drawnArray);
     }
 
     return resultArray;
   }
-  drawFive();
+
+  // console.log(resultArray[] )
+
+  function generatePokerHand() {
+    const resultArray = drawFive();
+
+    const cardOneSuitOneElement = document.getElementById("cardOneSuitOne");
+    const cardOneSuitTwoElement = document.getElementById("cardOneSuitTwo");
+    const cardOneRankingElement = document.getElementById("cardOneRanking");
+    const cardTwoSuitOneElement = document.getElementById("cardTwoSuitOne");
+    const cardTwoSuitTwoElement = document.getElementById("cardTwoSuitTwo");
+    const cardTwoRankingElement = document.getElementById("cardTwoRanking");
+    const suitsElement = document.getElementById("suits");
+    const suitsTwoElement = document.getElementById("suitsTwo");
+    const cardsRankingElement = document.getElementById("cardsRanking");
+    const cardFourSuitOneElement = document.getElementById("cardFourSuitOne");
+    const cardFourSuitTwoElement = document.getElementById("cardFourSuitTwo");
+    const cardFourRankingElement = document.getElementById("cardFourRanking");
+    const cardFiveSuitOneElement = document.getElementById("cardFiveSuitOne");
+    const cardFiveSuitTwoElement = document.getElementById("cardFiveSuitTwo");
+    const cardFiveRankingElement = document.getElementById("cardFiveRanking");
+
+    const suitResult = resultArray[0][0];
+    const suitResult2 = resultArray[1][0];
+    const suitResult3 = resultArray[2][0];
+    const suitResult4 = resultArray[3][0];
+    const suitResult5 = resultArray[4][0];
+    const rankingResult = resultArray[0][1];
+    const rankingResult2 = resultArray[1][1];
+    const rankingResult3 = resultArray[2][1];
+    const rankingResult4 = resultArray[3][1];
+    const rankingResult5 = resultArray[4][1];
+
+    cardOneSuitOneElement.textContent = suitResult;
+    cardOneSuitTwoElement.textContent = suitResult;
+    cardOneRankingElement.textContent = rankingResult;
+    cardTwoSuitOneElement.textContent = suitResult2;
+    cardTwoSuitTwoElement.textContent = suitResult2;
+    cardTwoRankingElement.textContent = rankingResult2;
+    cardFourSuitOneElement.textContent = suitResult3;
+    cardFourSuitTwoElement.textContent = suitResult3;
+    cardFourRankingElement.textContent = rankingResult3;
+    cardFiveSuitOneElement.textContent = suitResult4;
+    cardFiveSuitTwoElement.textContent = suitResult4;
+    cardFiveRankingElement.textContent = rankingResult4;
+    suitsElement.textContent = suitResult5;
+    suitsTwoElement.textContent = suitResult5;
+    cardsRankingElement.textContent = rankingResult5;
+
+    if (suitResult === "♥" || suitResult === "♦") {
+      cardOneSuitOneElement.style.color = "red";
+      cardOneSuitTwoElement.style.color = "red";
+    } else {
+      cardOneSuitOneElement.style.color = "black";
+      cardOneSuitTwoElement.style.color = "black";
+    }
+
+    if (suitResult2 === "♥" || suitResult2 === "♦") {
+      cardTwoSuitOneElement.style.color = "red";
+      cardTwoSuitTwoElement.style.color = "red";
+    } else {
+      cardTwoSuitOneElement.style.color = "black";
+      cardTwoSuitTwoElement.style.color = "black";
+    }
+
+    if (suitResult3 === "♥" || suitResult3 === "♦") {
+      suitsElement.style.color = "red";
+      suitsTwoElement.style.color = "red";
+    } else {
+      suitsElement.style.color = "black";
+      suitsTwoElement.style.color = "black";
+    }
+
+    if (suitResult4 === "♥" || suitResult4 === "♦") {
+      cardFourSuitOneElement.style.color = "red";
+      cardFourSuitTwoElement.style.color = "red";
+    } else {
+      cardFourSuitOneElement.style.color = "black";
+      cardFourSuitTwoElement.style.color = "black";
+    }
+
+    if (suitResult5 === "♥" || suitResult5 === "♦") {
+      cardFiveSuitOneElement.style.color = "red";
+      cardFiveSuitTwoElement.style.color = "red";
+    } else {
+      cardFiveSuitOneElement.style.color = "black";
+      cardFiveSuitTwoElement.style.color = "black";
+    }
+
+    generateButton.style.display = "none";
+  }
+
   // 1.make draw card function Complete
   // 2.have draw card pull a random card out from deck Complete
   // 3. have same function delete card from deck Complete
   // 4. drawCard 5times using a loop.Complete
-  // 5. seperate each card into 5 variables
-  // 6. send each card to the hmtl
+  // 5. seperate each card into 5 variables Complete
+  // 6. send each card to the hmtl Using Old code send each card to HTML
+  // 7. Troubleshoot Why is generate poker button not generating again with multiple clicks
 
   // function generatePokerHand() {
+  // Get one random card from allCards
   //   const allCardsIndex = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexTwo = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexThree = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexFour = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexFive = Math.floor(Math.random() * allCards.length);
 
+  // Elements to link to index
   //   const cardOneSuitOneElement = document.getElementById("cardOneSuitOne");
   //   const cardOneSuitTwoElement = document.getElementById("cardOneSuitTwo");
   //   const cardOneRankingElement = document.getElementById("cardOneRanking");
@@ -145,6 +240,7 @@ window.onload = function() {
   //   const cardFiveSuitTwoElement = document.getElementById("cardFiveSuitTwo");
   //   const cardFiveRankingElement = document.getElementById("cardFiveRanking");
 
+  // Get and seperate differnt suit and ranking results
   //   const suitResult = allCards[allCardsIndex][0];
   //   const suitResult2 = allCards[allCardsIndexTwo][0];
   //   const suitResult3 = allCards[allCardsIndexThree][0];
@@ -156,6 +252,7 @@ window.onload = function() {
   //   const rankingResult4 = allCards[allCardsIndexFour][1];
   //   const rankingResult5 = allCards[allCardsIndexFive][1];
 
+  // EDIT TEXT CONTENT
   //   cardOneSuitOneElement.textContent = suitResult;
   //   cardOneSuitTwoElement.textContent = suitResult;
   //   cardOneRankingElement.textContent = rankingResult;
@@ -212,7 +309,7 @@ window.onload = function() {
   //     cardFiveSuitTwoElement.style.color = "black";
   //   }
 
-  //   generateButton.style.display = "none";
+  //
 
   //   console.log("this is it");
 
