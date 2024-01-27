@@ -76,6 +76,7 @@ window.onload = function() {
   }
 
   const drawIds = [
+    "cardCounterZone",
     "drawButtonOne",
     "drawButtonTwo",
     "drawButtonThree",
@@ -92,8 +93,20 @@ window.onload = function() {
 
   function drawCard() {
     if (allCards.length === 0) {
-      alert("No more cards to draw.");
-      return null;
+      const confirmResponse = confirm(
+        "No more cards to draw. Would you like to open a new deck?"
+      );
+
+      if (confirmResponse) {
+        refillDeck();
+        return drawCard();
+      } else {
+        const byeResponse = confirm("Are you sure you want to leave?");
+
+        if (byeResponse) {
+          window.close();
+        }
+      }
     }
 
     const drawIndex = Math.floor(Math.random() * allCards.length);
@@ -103,10 +116,20 @@ window.onload = function() {
 
     return drawResult;
   }
+
+  function refillDeck() {
+    allCards = [];
+    for (let suit of suits) {
+      for (let card of cards) {
+        allCards.push(`${suit}${card}`);
+      }
+    }
+  }
+
   function drawFive() {
     const resultArray = [];
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       const drawnArray = drawCard();
       console.log(resultArray + "resultArray");
       console.log(drawnArray + "drawnArray");
@@ -148,6 +171,58 @@ window.onload = function() {
     const rankingResult4 = resultArray[3][1];
     const rankingResult5 = resultArray[4][1];
 
+    console.log(suitResult);
+
+    if (suitResult === "♥" || suitResult === "♦") {
+      cardOneSuitOneElement.style.color = "red";
+      cardOneSuitTwoElement.style.color = "red";
+    } else {
+      cardOneSuitOneElement.style.color = "black";
+      cardOneSuitTwoElement.style.color = "black";
+    }
+    console.log(suitResult);
+    console.log(suitResult2);
+
+    if (suitResult2 === "♥" || suitResult2 === "♦") {
+      cardTwoSuitOneElement.style.color = "red";
+      cardTwoSuitTwoElement.style.color = "red";
+    } else {
+      cardTwoSuitOneElement.style.color = "black";
+      cardTwoSuitTwoElement.style.color = "black";
+    }
+
+    console.log(suitResult2);
+    console.log(suitResult3);
+
+    if (suitResult3 === "♥" || suitResult3 === "♦") {
+      suitsElement.style.color = "red";
+      suitsTwoElement.style.color = "red";
+    } else {
+      suitsElement.style.color = "black";
+      suitsTwoElement.style.color = "black";
+    }
+    console.log(suitResult3);
+    console.log(suitResult4);
+
+    if (suitResult4 === "♥" || suitResult4 === "♦") {
+      cardFourSuitOneElement.style.color = "red";
+      cardFourSuitTwoElement.style.color = "red";
+    } else {
+      cardFourSuitOneElement.style.color = "black";
+      cardFourSuitTwoElement.style.color = "black";
+    }
+    console.log(suitResult4);
+    console.log(suitResult5);
+
+    if (suitResult5 === "♥" || suitResult5 === "♦") {
+      cardFiveSuitOneElement.style.color = "red";
+      cardFiveSuitTwoElement.style.color = "red";
+    } else {
+      cardFiveSuitOneElement.style.color = "black";
+      cardFiveSuitTwoElement.style.color = "black";
+    }
+
+    console.log(suitResult5);
     cardOneSuitOneElement.textContent = suitResult;
     cardOneSuitTwoElement.textContent = suitResult;
     cardOneRankingElement.textContent = rankingResult;
@@ -164,45 +239,8 @@ window.onload = function() {
     suitsTwoElement.textContent = suitResult5;
     cardsRankingElement.textContent = rankingResult5;
 
-    if (suitResult === "♥" || suitResult === "♦") {
-      cardOneSuitOneElement.style.color = "red";
-      cardOneSuitTwoElement.style.color = "red";
-    } else {
-      cardOneSuitOneElement.style.color = "black";
-      cardOneSuitTwoElement.style.color = "black";
-    }
-
-    if (suitResult2 === "♥" || suitResult2 === "♦") {
-      cardTwoSuitOneElement.style.color = "red";
-      cardTwoSuitTwoElement.style.color = "red";
-    } else {
-      cardTwoSuitOneElement.style.color = "black";
-      cardTwoSuitTwoElement.style.color = "black";
-    }
-
-    if (suitResult3 === "♥" || suitResult3 === "♦") {
-      suitsElement.style.color = "red";
-      suitsTwoElement.style.color = "red";
-    } else {
-      suitsElement.style.color = "black";
-      suitsTwoElement.style.color = "black";
-    }
-
-    if (suitResult4 === "♥" || suitResult4 === "♦") {
-      cardFourSuitOneElement.style.color = "red";
-      cardFourSuitTwoElement.style.color = "red";
-    } else {
-      cardFourSuitOneElement.style.color = "black";
-      cardFourSuitTwoElement.style.color = "black";
-    }
-
-    if (suitResult5 === "♥" || suitResult5 === "♦") {
-      cardFiveSuitOneElement.style.color = "red";
-      cardFiveSuitTwoElement.style.color = "red";
-    } else {
-      cardFiveSuitOneElement.style.color = "black";
-      cardFiveSuitTwoElement.style.color = "black";
-    }
+    const cardCounterElement = document.getElementById("cardCounter");
+    cardCounterElement.textContent = `${allCards.length}`;
 
     generateButton.style.display = "none";
   }
