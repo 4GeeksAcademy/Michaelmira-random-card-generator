@@ -278,16 +278,22 @@ window.onload = function() {
     function drawOne() {
       const cardOneDrawResultArray = [];
       const cardOneDrawnArray = drawCard();
-      console.log(cardOneDrawResultArray + "cardOneResultArray");
-      console.log(cardOneDrawnArray + "drawnArray");
       cardOneDrawResultArray.push(cardOneDrawnArray);
-      console.log(cardOneDrawResultArray + "cardOneResultArray");
-      console.log(cardOneDrawnArray + "drawnArray");
       const suitResultDrawCardOne = cardOneDrawResultArray[0][0];
       const rankingResultDrawCardOne = cardOneDrawResultArray[0][1];
+
+      if (suitResultDrawCardOne === "♥" || suitResultDrawCardOne === "♦") {
+        cardOneSuitOneElement.style.color = "red";
+        cardOneSuitTwoElement.style.color = "red";
+      } else {
+        cardOneSuitOneElement.style.color = "black";
+        cardOneSuitTwoElement.style.color = "black";
+      }
+
       cardOneSuitOneElement.textContent = suitResultDrawCardOne;
       cardOneSuitTwoElement.textContent = suitResultDrawCardOne;
       cardOneRankingElement.textContent = rankingResultDrawCardOne;
+      cardCounterElement.textContent = `${allCards.length}`;
 
       return cardOneDrawResultArray;
     }
