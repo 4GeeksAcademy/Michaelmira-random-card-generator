@@ -250,6 +250,7 @@ window.onload = function() {
     const drawButtonThree = document.getElementById("drawButtonThree");
     const drawButtonFour = document.getElementById("drawButtonFour");
     const drawButtonFive = document.getElementById("drawButtonFive");
+    const drawConfirmButton = document.getElementById("drawConfirmButton");
 
     // Function to handle the button click and toggle the "clicked" state
     function handleButtonClickOne() {
@@ -272,6 +273,10 @@ window.onload = function() {
       drawButtonFive.classList.toggle("clicked");
       // Call your function here that should release the button // For example: releaseButtonTwo();
     }
+    function handleDrawConfirmButtonClick() {
+      // Remove the "clicked" class from drawButtonTwo
+      drawButtonTwo.classList.remove("clicked");
+    }
 
     // Attach the click event listener to the button
     drawButtonOne.addEventListener("click", handleButtonClickOne);
@@ -279,6 +284,12 @@ window.onload = function() {
     drawButtonThree.addEventListener("click", handleButtonClickThree);
     drawButtonFour.addEventListener("click", handleButtonClickFour);
     drawButtonFive.addEventListener("click", handleButtonClickFive);
+
+    // Attach the click event listener to drawButtonTwo
+    drawButtonTwo.addEventListener("click", handleDrawButtonTwoClick);
+
+    // Attach the click event listener to drawConfirmButton
+    drawConfirmButton.addEventListener("click", handleDrawConfirmButtonClick);
   }
 
   // 1.make draw card function Complete
@@ -288,14 +299,6 @@ window.onload = function() {
   // 5. seperate each card into 5 variables Complete
   // 6. send each card to the hmtl Using Old code send each card to HTML
   // 7. Troubleshoot Why is generate poker button not generating again with multiple clicks
-
-  // function generatePokerHand() {
-  // Get one random card from allCards
-  //   const allCardsIndex = Math.floor(Math.random() * allCards.length);
-  //   const allCardsIndexTwo = Math.floor(Math.random() * allCards.length);
-  //   const allCardsIndexThree = Math.floor(Math.random() * allCards.length);
-  //   const allCardsIndexFour = Math.floor(Math.random() * allCards.length);
-  //   const allCardsIndexFive = Math.floor(Math.random() * allCards.length);
 };
 
 // 1. make 2 arrays one with card suits and one identifying cards Complete
