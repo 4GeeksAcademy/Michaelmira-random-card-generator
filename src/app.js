@@ -275,7 +275,11 @@ window.onload = function() {
     }
     function handleDrawConfrimButton() {
       // Remove the "clicked" class from drawButtonTwo
+      drawButtonOne.classList.remove("clicked");
       drawButtonTwo.classList.remove("clicked");
+      drawButtonThree.classList.remove("clicked");
+      drawButtonFour.classList.remove("clicked");
+      drawButtonFive.classList.remove("clicked");
     }
 
     // Attach the click event listener to the button
@@ -318,3 +322,5 @@ window.onload = function() {
 // 17. make new draw selected button
 // 18. make draw buttons be pressed and stay highlighted
 // 19. make function to draw all cards when button is pressed
+// 20. drawConfrim button create and have this unclick all draw buttons that are clicked.
+// 21. Create a function that when user clicks the drawConfrim button each draw button that is in Clicked state will
