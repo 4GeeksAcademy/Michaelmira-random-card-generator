@@ -243,6 +243,41 @@ window.onload = function() {
     cardCounterElement.textContent = `${allCards.length}`;
 
     generateButton.style.display = "none";
+
+    const drawButtonOne = document.getElementById("drawButtonOne");
+    const drawButtonTwo = document.getElementById("drawButtonTwo");
+    const drawButtonThree = document.getElementById("drawButtonThree");
+    const drawButtonFour = document.getElementById("drawButtonFour");
+    const drawButtonFive = document.getElementById("drawButtonFive");
+
+    // Function to handle the button click and toggle the "clicked" state
+    function handleButtonClickOne() {
+      drawButtonOne.classList.toggle("clicked");
+      // Call your function here that should release the button // For example: releaseButtonTwo();
+    }
+    function handleButtonClickTwo() {
+      drawButtonTwo.classList.toggle("clicked");
+      // Call your function here that should release the button // For example: releaseButtonTwo();
+    }
+    function handleButtonClickThree() {
+      drawButtonThree.classList.toggle("clicked");
+      // Call your function here that should release the button // For example: releaseButtonTwo();
+    }
+    function handleButtonClickFour() {
+      drawButtonFour.classList.toggle("clicked");
+      // Call your function here that should release the button // For example: releaseButtonTwo();
+    }
+    function handleButtonClickFive() {
+      drawButtonFive.classList.toggle("clicked");
+      // Call your function here that should release the button // For example: releaseButtonTwo();
+    }
+
+    // Attach the click event listener to the button
+    drawButtonOne.addEventListener("click", handleButtonClickOne);
+    drawButtonTwo.addEventListener("click", handleButtonClickTwo);
+    drawButtonThree.addEventListener("click", handleButtonClickThree);
+    drawButtonFour.addEventListener("click", handleButtonClickFour);
+    drawButtonFive.addEventListener("click", handleButtonClickFive);
   }
 
   // 1.make draw card function Complete
@@ -260,105 +295,6 @@ window.onload = function() {
   //   const allCardsIndexThree = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexFour = Math.floor(Math.random() * allCards.length);
   //   const allCardsIndexFive = Math.floor(Math.random() * allCards.length);
-
-  // Elements to link to index
-  //   const cardOneSuitOneElement = document.getElementById("cardOneSuitOne");
-  //   const cardOneSuitTwoElement = document.getElementById("cardOneSuitTwo");
-  //   const cardOneRankingElement = document.getElementById("cardOneRanking");
-  //   const cardTwoSuitOneElement = document.getElementById("cardTwoSuitOne");
-  //   const cardTwoSuitTwoElement = document.getElementById("cardTwoSuitTwo");
-  //   const cardTwoRankingElement = document.getElementById("cardTwoRanking");
-  //   const suitsElement = document.getElementById("suits");
-  //   const suitsTwoElement = document.getElementById("suitsTwo");
-  //   const cardsRankingElement = document.getElementById("cardsRanking");
-  //   const cardFourSuitOneElement = document.getElementById("cardFourSuitOne");
-  //   const cardFourSuitTwoElement = document.getElementById("cardFourSuitTwo");
-  //   const cardFourRankingElement = document.getElementById("cardFourRanking");
-  //   const cardFiveSuitOneElement = document.getElementById("cardFiveSuitOne");
-  //   const cardFiveSuitTwoElement = document.getElementById("cardFiveSuitTwo");
-  //   const cardFiveRankingElement = document.getElementById("cardFiveRanking");
-
-  // Get and seperate differnt suit and ranking results
-  //   const suitResult = allCards[allCardsIndex][0];
-  //   const suitResult2 = allCards[allCardsIndexTwo][0];
-  //   const suitResult3 = allCards[allCardsIndexThree][0];
-  //   const suitResult4 = allCards[allCardsIndexFour][0];
-  //   const suitResult5 = allCards[allCardsIndexFive][0];
-  //   const rankingResult = allCards[allCardsIndex][1];
-  //   const rankingResult2 = allCards[allCardsIndexTwo][1];
-  //   const rankingResult3 = allCards[allCardsIndexThree][1];
-  //   const rankingResult4 = allCards[allCardsIndexFour][1];
-  //   const rankingResult5 = allCards[allCardsIndexFive][1];
-
-  // EDIT TEXT CONTENT
-  //   cardOneSuitOneElement.textContent = suitResult;
-  //   cardOneSuitTwoElement.textContent = suitResult;
-  //   cardOneRankingElement.textContent = rankingResult;
-  //   cardTwoSuitOneElement.textContent = suitResult2;
-  //   cardTwoSuitTwoElement.textContent = suitResult2;
-  //   cardTwoRankingElement.textContent = rankingResult2;
-  //   cardFourSuitOneElement.textContent = suitResult3;
-  //   cardFourSuitTwoElement.textContent = suitResult3;
-  //   cardFourRankingElement.textContent = rankingResult3;
-  //   cardFiveSuitOneElement.textContent = suitResult4;
-  //   cardFiveSuitTwoElement.textContent = suitResult4;
-  //   cardFiveRankingElement.textContent = rankingResult4;
-  //   suitsElement.textContent = suitResult5;
-  //   suitsTwoElement.textContent = suitResult5;
-  //   cardsRankingElement.textContent = rankingResult5;
-
-  //   if (suitResult === "♥" || suitResult === "♦") {
-  //     cardOneSuitOneElement.style.color = "red";
-  //     cardOneSuitTwoElement.style.color = "red";
-  //   } else {
-  //     cardOneSuitOneElement.style.color = "black";
-  //     cardOneSuitTwoElement.style.color = "black";
-  //   }
-
-  //   if (suitResult2 === "♥" || suitResult2 === "♦") {
-  //     cardTwoSuitOneElement.style.color = "red";
-  //     cardTwoSuitTwoElement.style.color = "red";
-  //   } else {
-  //     cardTwoSuitOneElement.style.color = "black";
-  //     cardTwoSuitTwoElement.style.color = "black";
-  //   }
-
-  //   if (suitResult3 === "♥" || suitResult3 === "♦") {
-  //     suitsElement.style.color = "red";
-  //     suitsTwoElement.style.color = "red";
-  //   } else {
-  //     suitsElement.style.color = "black";
-  //     suitsTwoElement.style.color = "black";
-  //   }
-
-  //   if (suitResult4 === "♥" || suitResult4 === "♦") {
-  //     cardFourSuitOneElement.style.color = "red";
-  //     cardFourSuitTwoElement.style.color = "red";
-  //   } else {
-  //     cardFourSuitOneElement.style.color = "black";
-  //     cardFourSuitTwoElement.style.color = "black";
-  //   }
-
-  //   if (suitResult5 === "♥" || suitResult5 === "♦") {
-  //     cardFiveSuitOneElement.style.color = "red";
-  //     cardFiveSuitTwoElement.style.color = "red";
-  //   } else {
-  //     cardFiveSuitOneElement.style.color = "black";
-  //     cardFiveSuitTwoElement.style.color = "black";
-  //   }
-
-  //
-
-  //   console.log("this is it");
-
-  //   const resultArray = [
-  //     [suitResult, rankingResult],
-  //     [suitResult2, rankingResult2],
-  //     [suitResult3, rankingResult3],
-  //     [suitResult4, rankingResult4],
-  //     [suitResult5, rankingResult5]
-  //   ];
-  // }
 };
 
 // 1. make 2 arrays one with card suits and one identifying cards Complete
@@ -376,6 +312,10 @@ window.onload = function() {
 // 11. make a new function to pull a random card out of the new deck array. and place it to cardOne. Completed
 // 11.B Create 5 Random cards at the same time. Completed
 // 12. get the chosen 5 cards and put them into an array Completed
-// 13. Cards are all turning red or black no just one need fix
-// 14. erase the 5 cards from deck. so that it can not be pulled a second time.
+// 13. Cards are all turning red or black no just one need fix  <STILL NOT WORKING>
+// 14. erase the 5 cards from deck. so that it can not be pulled a second time. Completed
 // 15. make Draw buttons under each card. Completed
+// 16. card counter complete new deck function completed
+// 17. make new draw selected button
+// 18. make draw buttons be pressed and stay highlighted
+// 19. make function to draw all cards when button is pressed
