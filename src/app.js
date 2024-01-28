@@ -341,6 +341,51 @@ window.onload = function() {
 
       return cardThreeDrawResultArray;
     }
+
+    function drawSlotFour() {
+      const cardFourDrawResultArray = [];
+      const cardFourDrawnArray = drawCard();
+      cardFourDrawResultArray.push(cardFourDrawnArray);
+      const suitResultDrawCardFour = cardFourDrawResultArray[0][0];
+      const rankingResultDrawCardFour = cardFourDrawResultArray[0][1];
+
+      if (suitResultDrawCardFour === "♥" || suitResultDrawCardFour === "♦") {
+        cardFourSuitOneElement.style.color = "red";
+        cardFourSuitTwoElement.style.color = "red";
+      } else {
+        cardFourSuitOneElement.style.color = "black";
+        cardFourSuitTwoElement.style.color = "black";
+      }
+
+      cardFourSuitOneElement.textContent = suitResultDrawCardFour;
+      cardFourSuitTwoElement.textContent = suitResultDrawCardFour;
+      cardFourRankingElement.textContent = rankingResultDrawCardFour;
+      cardCounterElement.textContent = `${allCards.length}`;
+
+      return cardFourDrawResultArray;
+    }
+    function drawSlotFive() {
+      const cardFiveDrawResultArray = [];
+      const cardFiveDrawnArray = drawCard();
+      cardFiveDrawResultArray.push(cardFiveDrawnArray);
+      const suitResultDrawCardFive = cardFiveDrawResultArray[0][0];
+      const rankingResultDrawCardFive = cardFiveDrawResultArray[0][1];
+
+      if (suitResultDrawCardFive === "♥" || suitResultDrawCardFive === "♦") {
+        cardFiveSuitOneElement.style.color = "red";
+        cardFiveSuitTwoElement.style.color = "red";
+      } else {
+        cardFiveSuitOneElement.style.color = "black";
+        cardFiveSuitTwoElement.style.color = "black";
+      }
+
+      cardFiveSuitOneElement.textContent = suitResultDrawCardFive;
+      cardFiveSuitTwoElement.textContent = suitResultDrawCardFive;
+      cardFiveRankingElement.textContent = rankingResultDrawCardFive;
+      cardCounterElement.textContent = `${allCards.length}`;
+
+      return cardFiveDrawResultArray;
+    }
     function handleDrawConfrimButton() {
       if (drawButtonOne.classList.contains("clicked")) {
         drawSlotOne();
