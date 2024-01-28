@@ -275,7 +275,7 @@ window.onload = function() {
       // Call your function here that should release the button // For example: releaseButtonTwo();
     }
 
-    function drawOne() {
+    function drawSlotOne() {
       const cardOneDrawResultArray = [];
       const cardOneDrawnArray = drawCard();
       cardOneDrawResultArray.push(cardOneDrawnArray);
@@ -297,9 +297,65 @@ window.onload = function() {
 
       return cardOneDrawResultArray;
     }
+    function drawSlotTwo() {
+      const cardTwoDrawResultArray = [];
+      const cardTwoDrawnArray = drawCard();
+      cardTwoDrawResultArray.push(cardTwoDrawnArray);
+      const suitResultDrawCardTwo = cardTwoDrawResultArray[0][0];
+      const rankingResultDrawCardTwo = cardTwoDrawResultArray[0][1];
+
+      if (suitResultDrawCardTwo === "♥" || suitResultDrawCardTwo === "♦") {
+        cardTwoSuitOneElement.style.color = "red";
+        cardTwoSuitTwoElement.style.color = "red";
+      } else {
+        cardTwoSuitOneElement.style.color = "black";
+        cardTwoSuitTwoElement.style.color = "black";
+      }
+
+      cardTwoSuitOneElement.textContent = suitResultDrawCardTwo;
+      cardTwoSuitTwoElement.textContent = suitResultDrawCardTwo;
+      cardTwoRankingElement.textContent = rankingResultDrawCardTwo;
+      cardCounterElement.textContent = `${allCards.length}`;
+
+      return cardTwoDrawResultArray;
+    }
+    function drawSlotThree() {
+      const cardThreeDrawResultArray = [];
+      const cardThreeDrawnArray = drawCard();
+      cardThreeDrawResultArray.push(cardThreeDrawnArray);
+      const suitResultDrawCardThree = cardThreeDrawResultArray[0][0];
+      const rankingResultDrawCardThree = cardThreeDrawResultArray[0][1];
+
+      if (suitResultDrawCardThree === "♥" || suitResultDrawCardThree === "♦") {
+        suitsElement.style.color = "red";
+        suitsTwoElement.style.color = "red";
+      } else {
+        suitsElement.style.color = "black";
+        suitsTwoElement.style.color = "black";
+      }
+
+      suitsElement.textContent = suitResultDrawCardThree;
+      suitsTwoElement.textContent = suitResultDrawCardThree;
+      cardsRankingElement.textContent = rankingResultDrawCardThree;
+      cardCounterElement.textContent = `${allCards.length}`;
+
+      return cardThreeDrawResultArray;
+    }
     function handleDrawConfrimButton() {
       if (drawButtonOne.classList.contains("clicked")) {
-        drawOne();
+        drawSlotOne();
+      }
+      if (drawButtonTwo.classList.contains("clicked")) {
+        drawSlotTwo();
+      }
+      if (drawButtonThree.classList.contains("clicked")) {
+        drawSlotThree();
+      }
+      if (drawButtonFour.classList.contains("clicked")) {
+        drawSlotFour();
+      }
+      if (drawButtonFive.classList.contains("clicked")) {
+        drawSlotFive();
       }
 
       drawButtonOne.classList.remove("clicked");
