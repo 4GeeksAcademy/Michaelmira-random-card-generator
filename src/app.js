@@ -250,7 +250,7 @@ window.onload = function() {
     const drawButtonThree = document.getElementById("drawButtonThree");
     const drawButtonFour = document.getElementById("drawButtonFour");
     const drawButtonFive = document.getElementById("drawButtonFive");
-    const drawConfirmButton = document.getElementById("drawConfirmButton");
+    const drawConfirmButton = document.getElementById("drawConfirm");
 
     // Function to handle the button click and toggle the "clicked" state
     function handleButtonClickOne() {
@@ -273,7 +273,7 @@ window.onload = function() {
       drawButtonFive.classList.toggle("clicked");
       // Call your function here that should release the button // For example: releaseButtonTwo();
     }
-    function handleDrawConfirmButtonClick() {
+    function handleDrawConfrimButton() {
       // Remove the "clicked" class from drawButtonTwo
       drawButtonTwo.classList.remove("clicked");
     }
@@ -284,12 +284,7 @@ window.onload = function() {
     drawButtonThree.addEventListener("click", handleButtonClickThree);
     drawButtonFour.addEventListener("click", handleButtonClickFour);
     drawButtonFive.addEventListener("click", handleButtonClickFive);
-
-    // Attach the click event listener to drawButtonTwo
-    drawButtonTwo.addEventListener("click", handleDrawButtonTwoClick);
-
-    // Attach the click event listener to drawConfirmButton
-    drawConfirmButton.addEventListener("click", handleDrawConfirmButtonClick);
+    drawConfirmButton.addEventListener("click", handleDrawConfrimButton);
   }
 
   // 1.make draw card function Complete
