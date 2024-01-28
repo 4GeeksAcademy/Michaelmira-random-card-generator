@@ -166,6 +166,7 @@ window.onload = function() {
     const suitResult3 = resultArray[2][0];
     const suitResult4 = resultArray[3][0];
     const suitResult5 = resultArray[4][0];
+
     const rankingResult = resultArray[0][1];
     const rankingResult2 = resultArray[1][1];
     const rankingResult3 = resultArray[2][1];
@@ -273,9 +274,30 @@ window.onload = function() {
       drawButtonFive.classList.toggle("clicked");
       // Call your function here that should release the button // For example: releaseButtonTwo();
     }
+
+    function drawOne() {
+      const cardOneDrawResultArray = [];
+      const cardOneDrawnArray = drawCard();
+      console.log(cardOneDrawResultArray + "cardOneResultArray");
+      console.log(cardOneDrawnArray + "drawnArray");
+      cardOneDrawResultArray.push(cardOneDrawnArray);
+      console.log(cardOneDrawResultArray + "cardOneResultArray");
+      console.log(cardOneDrawnArray + "drawnArray");
+      const suitResultDrawCardOne = cardOneDrawResultArray[0][0];
+      const rankingResultDrawCardOne = cardOneDrawResultArray[0][1];
+      cardOneSuitOneElement.textContent = suitResultDrawCardOne;
+      cardOneSuitTwoElement.textContent = suitResultDrawCardOne;
+      cardOneRankingElement.textContent = rankingResultDrawCardOne;
+
+      return cardOneDrawResultArray;
+    }
     function handleDrawConfrimButton() {
-      // Remove the "clicked" class from drawButtonTwo
+      if (drawButtonOne.classList.contains("clicked")) {
+        drawOne();
+      }
+
       drawButtonOne.classList.remove("clicked");
+
       drawButtonTwo.classList.remove("clicked");
       drawButtonThree.classList.remove("clicked");
       drawButtonFour.classList.remove("clicked");
@@ -323,4 +345,5 @@ window.onload = function() {
 // 18. make draw buttons be pressed and stay highlighted
 // 19. make function to draw all cards when button is pressed
 // 20. drawConfrim button create and have this unclick all draw buttons that are clicked.
-// 21. Create a function that when user clicks the drawConfrim button each draw button that is in Clicked state will
+// 21. Create a function that when user clicks the drawConfrim button each draw button that is in Clicked state will turn to unclick.
+// 22. Have drawConfrim use existing functions to pull and post a new card to the corresponding card above.
