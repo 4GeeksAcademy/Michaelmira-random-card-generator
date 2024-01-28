@@ -76,6 +76,7 @@ window.onload = function() {
   }
 
   const drawIds = [
+    "drawConfirm",
     "cardCounterZone",
     "drawButtonOne",
     "drawButtonTwo",
