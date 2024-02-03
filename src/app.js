@@ -70,7 +70,7 @@ window.onload = function() {
   function toggleCard() {
     for (const cardId of cardIds) {
       const card = document.getElementById(cardId);
-      card.classList.remove("bg-success");
+      card.classList.remove("d-none");
       card.classList.add("bg-white");
     }
   }
@@ -231,15 +231,15 @@ window.onload = function() {
     cardTwoSuitOneElement.textContent = suitResult2;
     cardTwoSuitTwoElement.textContent = suitResult2;
     cardTwoRankingElement.textContent = rankingResult2;
-    cardFourSuitOneElement.textContent = suitResult3;
-    cardFourSuitTwoElement.textContent = suitResult3;
-    cardFourRankingElement.textContent = rankingResult3;
-    cardFiveSuitOneElement.textContent = suitResult4;
-    cardFiveSuitTwoElement.textContent = suitResult4;
-    cardFiveRankingElement.textContent = rankingResult4;
-    suitsElement.textContent = suitResult5;
-    suitsTwoElement.textContent = suitResult5;
-    cardsRankingElement.textContent = rankingResult5;
+    suitsElement.textContent = suitResult3;
+    suitsTwoElement.textContent = suitResult3;
+    cardsRankingElement.textContent = rankingResult3;
+    cardFourSuitOneElement.textContent = suitResult4;
+    cardFourSuitTwoElement.textContent = suitResult4;
+    cardFourRankingElement.textContent = rankingResult4;
+    cardFiveSuitOneElement.textContent = suitResult5;
+    cardFiveSuitTwoElement.textContent = suitResult5;
+    cardFiveRankingElement.textContent = rankingResult5;
 
     const cardCounterElement = document.getElementById("cardCounter");
     cardCounterElement.textContent = `${allCards.length}`;
