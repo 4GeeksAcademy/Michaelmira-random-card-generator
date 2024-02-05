@@ -22,6 +22,34 @@ window.onload = function() {
     "K",
     "A"
   ];
+
+  const drawButtonOne = document.getElementById("drawButtonOne");
+  const drawButtonTwo = document.getElementById("drawButtonTwo");
+  const drawButtonThree = document.getElementById("drawButtonThree");
+  const drawButtonFour = document.getElementById("drawButtonFour");
+  const drawButtonFive = document.getElementById("drawButtonFive");
+
+  function handleButtonClickOne() {
+    drawButtonOne.classList.toggle("clicked");
+    // Call your function here that should release the button // For example: releaseButtonTwo();
+  }
+  function handleButtonClickTwo() {
+    drawButtonTwo.classList.toggle("clicked");
+    // Call your function here that should release the button // For example: releaseButtonTwo();
+  }
+  function handleButtonClickThree() {
+    drawButtonThree.classList.toggle("clicked");
+    // Call your function here that should release the button // For example: releaseButtonTwo();
+  }
+  function handleButtonClickFour() {
+    drawButtonFour.classList.toggle("clicked");
+    // Call your function here that should release the button // For example: releaseButtonTwo();
+  }
+  function handleButtonClickFive() {
+    drawButtonFive.classList.toggle("clicked");
+    // Call your function here that should release the button // For example: releaseButtonTwo();
+  }
+
   function generateCard() {
     const suitsIndex = Math.floor(Math.random() * suits.length);
     const cardsIndex = Math.floor(Math.random() * cards.length);
@@ -70,7 +98,7 @@ window.onload = function() {
   function toggleCard() {
     for (const cardId of cardIds) {
       const card = document.getElementById(cardId);
-      card.classList.remove("d-none");
+      card.classList.remove("bg-success");
       card.classList.add("bg-white");
     }
   }
@@ -246,34 +274,9 @@ window.onload = function() {
 
     generateButton.style.display = "none";
 
-    const drawButtonOne = document.getElementById("drawButtonOne");
-    const drawButtonTwo = document.getElementById("drawButtonTwo");
-    const drawButtonThree = document.getElementById("drawButtonThree");
-    const drawButtonFour = document.getElementById("drawButtonFour");
-    const drawButtonFive = document.getElementById("drawButtonFive");
     const drawConfirmButton = document.getElementById("drawConfirm");
 
     // Function to handle the button click and toggle the "clicked" state
-    function handleButtonClickOne() {
-      drawButtonOne.classList.toggle("clicked");
-      // Call your function here that should release the button // For example: releaseButtonTwo();
-    }
-    function handleButtonClickTwo() {
-      drawButtonTwo.classList.toggle("clicked");
-      // Call your function here that should release the button // For example: releaseButtonTwo();
-    }
-    function handleButtonClickThree() {
-      drawButtonThree.classList.toggle("clicked");
-      // Call your function here that should release the button // For example: releaseButtonTwo();
-    }
-    function handleButtonClickFour() {
-      drawButtonFour.classList.toggle("clicked");
-      // Call your function here that should release the button // For example: releaseButtonTwo();
-    }
-    function handleButtonClickFive() {
-      drawButtonFive.classList.toggle("clicked");
-      // Call your function here that should release the button // For example: releaseButtonTwo();
-    }
 
     function drawSlotOne() {
       const cardOneDrawResultArray = [];
@@ -404,7 +407,6 @@ window.onload = function() {
       }
 
       drawButtonOne.classList.remove("clicked");
-
       drawButtonTwo.classList.remove("clicked");
       drawButtonThree.classList.remove("clicked");
       drawButtonFour.classList.remove("clicked");
